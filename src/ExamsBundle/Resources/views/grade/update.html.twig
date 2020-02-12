@@ -1,0 +1,23 @@
+<html>
+<head>
+
+
+</head>
+<body><h1>Welcome to the grades:update page</h1>
+<fieldset style="width: 50%">
+    <form method="POST">
+        Subject: <input type="text" name="subject" value="{{ grade.subject }}">
+        <br/>
+        Session: <input type="text" name="session" value="{{ grade.idExam.session }}"><br/>
+        Teacher: <input type="text" name="teacher" value="{{ grade.teacher }}"><br/>
+        Pupil: <input type="text" name="pupil" value="{{ grade.pupil }}"><br/>
+        Grade: <input type="text" name="grade" value="{{ grade.grade }}"><br/>
+        <br/>
+
+        <input type="submit" value="Enregistrer">
+    </form>
+</fieldset>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<table border="1">
+    <tr>
+
+        <th>Subject</th>
+        <th>Session</th>
+        <th>Teacher</th>
+        <th>Pupil</th>
+        <th>Grade</th>
+    </tr>
+    {% for grade in listgrades %} <tr>
+        <td>{{ grade.subject}}</td>
+        <td>{{ grade.idExam.session }}</td>
+        <td>{{ grade.teacher}}</td>
+        <td>{{ grade.pupil}}</td>
+        <td>{{ grade.grade}}</td>
+        <td> <a href="{{ path('updategrades',{'id':grade.idg}) }}">Update</a></td>
+        <td> <a href="{{ path('deletegrades',{'id':grade.idg}) }}">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table>

@@ -1,0 +1,27 @@
+exams_homepage:
+    path:     /
+    defaults: { _controller: ExamsBundle:Default:index }
+afficheexams:
+    path:     /listeexams
+    defaults: {_controller: ExamsBundle:Exam:read}
+affichegrades:
+    path:     /listegrades
+    defaults: {_controller: ExamsBundle:Grade:read}
+createexams:
+    path:     /createexams
+    defaults: {_controller: ExamsBundle:Exam:create}
+creategrades:
+    path:     /creategrades
+    defaults: {_controller: ExamsBundle:Grade:create}
+updateexams:
+    path:     /updatee/{id}
+    defaults: {_controller: ExamsBundle:Exam:update}
+updategrades:
+    path:     /updateg/{id}
+    defaults: {_controller: ExamsBundle:Grade:update}
+deleteexams:
+    path:     /deletee/{id}
+    defaults: {_controller: ExamsBundle:Exam:delete}
+deletegrades:
+    path:     /deleteg/{id}
+    defaults: {_controller: ExamsBundle:Grade:delete}

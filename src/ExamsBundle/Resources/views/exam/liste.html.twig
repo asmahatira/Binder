@@ -1,0 +1,17 @@
+<table border="1">
+    <tr>
+
+        <th>Subject</th>
+        <th>Session</th>
+        <th>Duration</th>
+    </tr>
+    {% for exam in listexams %} <tr>
+        <td>{{ exam.subject}}</td>
+        <td>{{ exam.session }}</td>
+        <td>{{ exam.duration}}</td>
+        <td> <a href="{{ path('updateexams',{'id':exam.ide}) }}">Modifier</a></td>
+        <td> <a href="{{ path('deleteexams',{'id':exam.ide}) }}">Supprimer</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
