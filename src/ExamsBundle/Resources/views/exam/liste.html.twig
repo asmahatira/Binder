@@ -1,17 +1,44 @@
-<table border="1">
+{% extends 'base.html.twig' %}
+{% block script %}
+<link rel="stylesheet" href="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')}}">
+<script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')}}"></script>
+<script src="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')}}"></script> {% endblock %}
+{% block content %}
+
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('web/images/bg_2.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">Check exams</h1>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Check exams <i class="ion-ios-arrow-forward"></i></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <br/>
+    </section>
+    <section>
+        <div class="row justify-content-center mb-5 pb-2 ">
+            <div class=table-responsive">
+<table class="table-hover table"  border="1">
     <tr>
 
         <th>Subject</th>
         <th>Session</th>
         <th>Duration</th>
     </tr>
-    {% for exam in listexams %} <tr>
+    {% for exam in listexams %} <tr class="success">
         <td>{{ exam.subject}}</td>
         <td>{{ exam.session }}</td>
         <td>{{ exam.duration}}</td>
-        <td> <a href="{{ path('updateexams',{'id':exam.ide}) }}">Modifier</a></td>
-        <td> <a href="{{ path('deleteexams',{'id':exam.ide}) }}">Supprimer</a></td>
+        <td> <a href="{{ path('updateexams',{'id':exam.ide}) }}">Update</a></td>
+        <td> <a href="{{ path('deleteexams',{'id':exam.ide}) }}">Delete</a></td>
     </tr>
-    {% endfor %}
+    {% endfor %} </table> </div>
+</div>
+    </section>
 
-</table>
+{% endblock %}
