@@ -1,20 +1,30 @@
 
-{% extends 'base.html.twig' %}
+{% extends 'base2.html.twig' %}
 
 {% block content %}
 <html>
 
 <body>
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <section class="hero-wrap hero-wrap-2" style="background-image: url('web/images/bg_2.jpg');">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row no-gutters slider-text align-items-center justify-content-center">
+                        <div class="col-md-9 ftco-animate text-center">
 <h1>Add an exam</h1>
 
     {{ form_start(form) }}
+<div class="form-group">
     subject:* {{ form_widget(form.subject) }} </br>
+</div>
     session:* {{ form_widget(form.session) }}</br>
     duration:* {{ form_widget(form.duration) }}</br>
     {{ form_widget(form.ajouter) }}</br>
-    {{ form_end(form) }}
-</form>
+                            {{ form_end(form) }}  </div></div> </div> </section></div> </section> </section>
 </body>
+
 </html>
 {% endblock %}
 

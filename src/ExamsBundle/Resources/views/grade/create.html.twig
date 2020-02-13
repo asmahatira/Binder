@@ -1,2 +1,49 @@
-<h1>Ajouter une formation</h1>
-{{ form(form) }}
+{% extends 'base2.html.twig' %}
+
+{% block content %}
+    <section id="main-content">
+    <section class="wrapper">
+    <div class="row">
+        <section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
+            <div class="container">
+                <div class="row d-flex align-items-stretch no-gutters">
+<h1>Insert grade</h1>
+                    <form action ="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="The subject" value={{ grade.subject }}>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="The Teacher" value={{ form.teacher }}>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="The pupil" value={{ grade.pupil }}>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="The grade" value={{ grade.grade }}>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="The subject" value={{ grade.idExam.session}}>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Update" class="btn btn-primary py-3 px-5">
+                        </div>
+                    </form>
+
+                     </div> </div> </section></div> </section> </section>
+{% endblock %}
+
+{# <form action="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="The subject" value={{ exam.subject }}>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="The session" value=""{{ exam.session }}>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" placeholder="The duration" value=""{{ exam.duration }}>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-primary py-3 px-5">
+                </div>
+            </form>
+#}
