@@ -28,13 +28,13 @@ class exam
      */
     private $subject;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="session", type="string", length=255)
-     */
-    private $session;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date")
+     */
+    private $date;
     /**
      * @var int
      *
@@ -74,28 +74,29 @@ class exam
         return $this->subject;
     }
     /**
-     * Set session
+     * Set date
      *
-     * @param string $session
+     * @param \DateTime $date
      *
      * @return exam
      */
-    public function setSession($session)
+    public function setDate($date)
     {
-        $this->session = $session;
+        $this->date = $date;
 
         return $this;
     }
 
     /**
-     * Get session
+     * Get date
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getSession()
+    public function getDate()
     {
-        return $this->session;
+        return $this->date;
     }
+
 
     /**
      * Set duration

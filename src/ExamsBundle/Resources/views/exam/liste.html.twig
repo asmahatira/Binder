@@ -32,10 +32,9 @@
     </tr>
     {% for exam in listexams %} <tr class="success">
         <td>{{ exam.subject}}</td>
-        <td>{{ exam.session }}</td>
+        <td>{{ exam.date|date }}</td>
         <td>{{ exam.duration}}</td>
-        <td> <a href="{{ path('updateexams',{'id':exam.ide}) }}">Update</a></td>
-        <td> <a href="{{ path('deleteexams',{'id':exam.ide}) }}">Delete</a></td>
+
     </tr>
     {% endfor %} </table> </div>
 </div>

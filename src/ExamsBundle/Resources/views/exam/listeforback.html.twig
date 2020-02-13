@@ -1,0 +1,32 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+    <section>
+        <div class="row justify-content-center mb-5 pb-2 ">
+    <section id="main-content">
+    <section class="wrapper">
+    <div class="row">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('web/images/bg_2.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+            <div class=table-responsive">
+                <table class="table-hover table"  border="1">
+
+                    <tr>
+
+                        <th>Subject</th>
+                        <th>Session</th>
+                        <th>Duration</th>
+                    </tr>
+                    {% for exam in listexams %} <tr class="success">
+                        <td>{{ exam.subject}}</td>
+                        <td>{{ exam.date|date }}</td>
+                        <td>{{ exam.duration}}</td>
+                        <td> <a href="{{ path('updateexams',{'id':exam.ide}) }}">Update</a></td>
+                        <td> <a href="{{ path('deleteexams',{'id':exam.ide}) }}">Delete</a></td>
+                    </tr>
+                    {% endfor %} </table> </div>
+        </div>
+    </section>
+{% endblock %}

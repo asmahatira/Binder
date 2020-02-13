@@ -16,12 +16,12 @@ class gradeType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('subject')
+        $builder
             ->add('teacher')
             ->add('pupil')
             ->add('grade')
-            ->add('idExam', EntityType::class, array('class'=>exam::class, 'choice_label'=>'session','multiple'=>false))
-            ->add('Ajouter', SubmitType::class)
+            ->add('idExam', EntityType::class, array('class'=>exam::class, 'choice_label'=>'subject','multiple'=>false))
+            ->add('Confirm', SubmitType::class)
         ;
     }/**
      * {@inheritdoc}

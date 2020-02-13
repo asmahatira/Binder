@@ -4,8 +4,14 @@ exams_homepage:
 afficheexams:
     path:     /listeexams
     defaults: {_controller: ExamsBundle:Exam:read}
+affichebackexams:
+    path:     /listbackexams
+    defaults: {_controller: ExamsBundle:Exam:read}
 affichegrades:
     path:     /listegrades
+    defaults: {_controller: ExamsBundle:Grade:read}
+affichebackgrades:
+    path:     /listbackgrades
     defaults: {_controller: ExamsBundle:Grade:read}
 createexams:
     path:     /createexams

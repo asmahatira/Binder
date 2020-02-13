@@ -21,12 +21,7 @@ class grade
      */
     private $idG;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="subject", type="string", length=255)
-     */
-    private $subject;
+
 
     /**
      * @var string
@@ -89,29 +84,8 @@ class grade
         return $this->idG;
     }
 
-    /**
-     * Set subject
-     *
-     * @param string $subject
-     *
-     * @return grade
-     */
-    public function setSubject($subject)
-    {
-        $this->subject = $subject;
 
-        return $this;
-    }
 
-    /**
-     * Get subject
-     *
-     * @return string
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
 
     /**
      * Set teacher

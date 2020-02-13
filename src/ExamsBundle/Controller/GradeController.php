@@ -21,22 +21,23 @@ class GradeController extends Controller
             $em=$this->getDoctrine()->getManager();
             $em->persist($grade);
             $em->flush();
-            return $this->redirectToRoute('affichegrades');
+            return $this->redirectToRoute('affichebackgrades');
         }
         return $this->render('@Exams/grade/create.html.twig',array('form'=>$form->createView()));
     }
-    public function updateAction(Request $request, $id) {
+    public function updateAction(Request $request, $id)
+    {
         $em = $this->getDoctrine()->getManager();
-        $grade=$em->getRepository(grade::class)->find($id);
-        if($request->isMethod('POST')){
-            $grade->setSubject($request->get('subject'));
-            $grade->setTeacher($request->get('teacher'));
-            $grade->setPupil($request->get('pupil'));
-            $grade->setGrade($request->get('grade'));
-            $em->flush();
-            return $this->redirectToRoute('affichegrades');
+        $grade = $em->getRepository(grade::class)->find($id);
+        $form=$this->createForm(gradeType::class,$grade);
+        $form->handleRequest($request);
+        if($form->isSubmitted()){
+            $ef=$this->getDoctrine()->getManager();
+            $ef->persist($grade);
+            $ef->flush();
+            return $this->redirectToRoute('affichebackgrades');
         }
-        return $this->render('@Exams/grade/update.html.twig', array('grade'=>$grade));
+        return $this->render('@Exams/grade/update.html.twig', array('form' => $form->createView()));
     }
     public function deleteAction($id){
         $em = $this->getDoctrine()->getManager();

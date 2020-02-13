@@ -15,9 +15,10 @@ class examType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('subject')
-            ->add('session')
+            ->add('date')
             ->add('duration')
-            ->add('ajouter', SubmitType::class)
+            ->add('confirm', SubmitType::class)
+
         ;
     }/**
      * {@inheritdoc}
