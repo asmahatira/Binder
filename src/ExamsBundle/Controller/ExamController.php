@@ -14,7 +14,10 @@ class ExamController extends Controller
         $listexams= $this->getDoctrine()->getManager()->getRepository(exam::class)->findAll();
         return ($this->render('@Exams/exam/listeforback.html.twig',array("listexams" =>$listexams)));
     }
-
+    public function readerAction() {
+        $listexams= $this->getDoctrine()->getManager()->getRepository(exam::class)->findAll();
+        return ($this->render('@Exams/exam/liste.html.twig',array("listexams" =>$listexams)));
+    }
 
     public function createAction(Request $request){
         $exam = new exam();

@@ -11,6 +11,10 @@ class GradeController extends Controller
 {
     public function readAction() {
         $listgrades= $this->getDoctrine()->getManager()->getRepository(grade::class)->findAll();
+        return ($this->render('@Exams/grade/listforback.html.twig',array("listgrades" =>$listgrades)));
+    }
+    public function readerAction() {
+        $listgrades= $this->getDoctrine()->getManager()->getRepository(grade::class)->findAll();
         return ($this->render('@Exams/grade/liste.html.twig',array("listgrades" =>$listgrades)));
     }
     public function createAction(Request $request){

@@ -3,13 +3,13 @@ exams_homepage:
     defaults: { _controller: ExamsBundle:Default:index }
 afficheexams:
     path:     /listeexams
-    defaults: {_controller: ExamsBundle:Exam:read}
+    defaults: {_controller: ExamsBundle:Exam:reader}
 affichebackexams:
     path:     /listbackexams
     defaults: {_controller: ExamsBundle:Exam:read}
 affichegrades:
     path:     /listegrades
-    defaults: {_controller: ExamsBundle:Grade:read}
+    defaults: {_controller: ExamsBundle:Grade:reader}
 affichebackgrades:
     path:     /listbackgrades
     defaults: {_controller: ExamsBundle:Grade:read}
