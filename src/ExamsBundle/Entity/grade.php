@@ -24,16 +24,16 @@ class grade
 
 
     /**
-     * @var string
+     * @ORM\OneToOne(targetEntity="teacher")
      *
-     * @ORM\Column(name="teacher", type="string", length=255)
+     * @ORM\JoinColumn(name="teacher",referencedColumnName="id")
      */
     private $teacher;
 
     /**
-     * @var string
+     * @ORM\OneToOne(targetEntity="pupil")
      *
-     * @ORM\Column(name="pupil", type="string", length=255)
+     * @ORM\JoinColumn(name="pupil",referencedColumnName="id")
      */
     private $pupil;
 
@@ -47,7 +47,7 @@ class grade
     /**
      * @var int
      * @ORM\ManyToOne(targetEntity="exam")
-     * @ORM\JoinColumn(name="idexam", referencedColumnName="id")
+     * @ORM\JoinColumn(name="idexam", referencedColumnName="id", onDelete="CASCADE")
 
      */
     private $idExam;

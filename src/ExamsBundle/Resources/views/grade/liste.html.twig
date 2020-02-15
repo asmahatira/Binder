@@ -35,8 +35,8 @@
     {% for grade in listgrades %} <tr>
 
         <td>{{ grade.idExam.subject }}</td>
-        <td>{{ grade.teacher}}</td>
-        <td>{{ grade.pupil}}</td>
+        <td>{{ grade.teacher.fullname}}</td>
+        <td>{{ grade.pupil.fullname}}</td>
         <td>{{ grade.grade}}</td>
         {#<td> <a href="{{ path('updategrades',{'id':grade.idg}) }}">Update</a></td>
         <td> <a href="{{ path('deletegrades',{'id':grade.idg}) }}">Delete</a></td>#}

@@ -48,6 +48,6 @@ class GradeController extends Controller
         $grade = $em->getRepository(grade::class)->find($id);
         $em->remove($grade);
         $em->flush();
-        return $this->redirectToRoute("affichegrades");
+        return $this->redirectToRoute("affichebackgrades");
     }
 }

@@ -88,6 +88,23 @@ class exam
     }
 
     /**
+     * @var int
+     * @ORM\ManyToOne(targetEntity="grade")
+     * @ORM\JoinColumn(name="idgrade", referencedColumnName="id", onDelete="CASCADE")
+
+     */
+    private $idgrade;
+    /**
+     * Get idgrade
+     *
+     * @return integer
+     */
+    public function getIdGrade()
+    {
+        return $this->idgrade;
+    }
+
+    /**
      * Get date
      *
      * @return \DateTime
@@ -96,7 +113,19 @@ class exam
     {
         return $this->date;
     }
+    /**
+     * Set idgrade
+     *
+     * @param integer $idgrade
+     *
+     * @return exam
+     */
+    public function setIdGrade($idgrade)
+    {
+        $this->idgrade = $idgrade;
 
+        return $this;
+    }
 
     /**
      * Set duration

@@ -3,6 +3,8 @@
 namespace ExamsBundle\Form;
 
 use ExamsBundle\Entity\exam;
+use ExamsBundle\Entity\pupil;
+use ExamsBundle\Entity\teacher;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -17,8 +19,8 @@ class gradeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('teacher')
-            ->add('pupil')
+            ->add('teacher', EntityType::class,array('class'=>teacher::class,'choice_label'=>'fullname','multiple'=>false))
+            ->add('pupil', EntityType::class, array('class'=>pupil::class,'choice_label'=>'fullname','multiple'=>false))
             ->add('grade')
             ->add('idExam', EntityType::class, array('class'=>exam::class, 'choice_label'=>'subject','multiple'=>false))
             ->add('Confirm', SubmitType::class)

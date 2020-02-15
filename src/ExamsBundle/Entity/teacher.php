@@ -24,16 +24,11 @@ class teacher
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=255)
+     * @ORM\Column(name="fullname", type="string", length=255)
      */
-    private $firstname;
+    private $fullname;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="lastname", type="string", length=255)
-     */
-    private $lastname;
+
 
     /**
      * @var string
@@ -75,52 +70,30 @@ class teacher
     }
 
     /**
-     * Set firstname
+     * Set fullname
      *
-     * @param string $firstname
+     * @param string $fullname
      *
      * @return teacher
      */
-    public function setFirstname($firstname)
+    public function setFullname($fullname)
     {
-        $this->firstname = $firstname;
+        $this->fullname = $fullname;
 
         return $this;
     }
 
     /**
-     * Get firstname
+     * Get fullname
      *
      * @return string
      */
-    public function getFirstname()
+    public function getFullname()
     {
-        return $this->firstname;
+        return $this->fullname;
     }
 
-    /**
-     * Set lastname
-     *
-     * @param string $lastname
-     *
-     * @return teacher
-     */
-    public function setLastname($lastname)
-    {
-        $this->lastname = $lastname;
 
-        return $this;
-    }
-
-    /**
-     * Get lastname
-     *
-     * @return string
-     */
-    public function getLastname()
-    {
-        return $this->lastname;
-    }
 
     /**
      * Set email
