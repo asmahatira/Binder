@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new UserBundle\UserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

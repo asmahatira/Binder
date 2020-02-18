@@ -18,7 +18,7 @@
                     <tr>
 
                         <th>Subject</th>
-                        <th>Session</th>
+                        <th>Date</th>
                         <th>Duration</th>
                     </tr>
                     {% for exam in listexams %} <tr class="success">
@@ -28,7 +28,9 @@
                         <td> <a href="{{ path('updateexams',{'id':exam.ide}) }}">Update</a></td>
                         <td> <a href="{{ path('deleteexams',{'id':exam.ide}) }}">Delete</a></td>
                     </tr>
-                    {% endfor %} </table> </div>
-        </div>
+                    {% endfor %}
+                </table>
+               </div>
+                </div> </div> </div>
     </section>
 {% endblock %}
