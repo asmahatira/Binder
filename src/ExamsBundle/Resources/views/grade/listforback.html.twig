@@ -1,4 +1,5 @@
 {% extends 'base2.html.twig' %}
+
 {% block content %}
     <section>
     <div class="row justify-content-center mb-5 pb-2 ">
@@ -12,18 +13,18 @@
     <div class="col-md-9 ftco-animate text-center">
 
     <h1>List of grades</h1>
-        <br/><br/>
+
         <div class=table-responsive">
             <table class="table-hover table"  border="1">
                     <tr>
 
-                        <th>Subject</th>
-                        <th>Teacher</th>
-                        <th>Pupil</th>
-                        <th>Grade</th>
+                        <th>{{  knp_pagination_sortable(pagination, 'subject', 'ex.idExam.subject') }}</th>
+                        <th>{{  knp_pagination_sortable(pagination, 'teacher', 'ex.teacher.fullname') }}</th>
+                        <th>{{  knp_pagination_sortable(pagination, 'pupil', 'ex.pupil.fullname') }}</th>
+                        <th>{{  knp_pagination_sortable(pagination, 'grade', 'ex.grade') }}</th>
 
                     </tr>
-                    {% for grade in listgrades %} <tr>
+                    {% for grade in pagination %} <tr>
 
                         <td>{{ grade.idExam.subject }}</td>
                         <td>{{ grade.teacher.fullname}}</td>
@@ -34,7 +35,10 @@
                     </tr>
 
 
-                    {% endfor %} </table> </div>
+                    {% endfor %} </table>
+            <div class="navigation">
+                {{ knp_pagination_render(pagination) }}
+            </div></div>
         </div>
     </section>
 

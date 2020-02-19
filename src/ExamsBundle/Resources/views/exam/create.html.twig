@@ -1,6 +1,6 @@
 
 {% extends 'base2.html.twig' %}
-
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block content %}
 <html>
 
@@ -15,14 +15,10 @@
                         <div class="col-md-9 ftco-animate text-center">
 <h1>Add an exam</h1>
 
-    {{ form_start(form) }}
+<div class="center">
 <div class="form-group">
-    subject:* {{ form_widget(form.subject) }} </br>
-
-    Date:* {{ form_widget(form.date) }}</br>
-    duration:* {{ form_widget(form.duration) }}</br> <br/>
-    {{ form_widget(form.confirm) }}</br>
-    {{ form_end(form) }}  </div></div> </div></div> </section></div> </section> </section>
+    {{ form(form)}}</br></div>
+     </div></div> </div></div> </section></div> </section> </section>
 </body>
 
 </html>

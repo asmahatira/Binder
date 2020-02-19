@@ -1,7 +1,7 @@
 <?php
 
 namespace ExamsBundle\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -39,7 +39,13 @@ class grade
 
     /**
      * @var float
-     *
+     * @Assert\NotBlank
+     * @Assert\Range(
+     *     min = 0,
+     *     max = 20,
+     *     minMessage = "Grade needs to be at least 0",
+     *     maxMessage = "Grade can't be over 20",
+     *     )
      * @ORM\Column(name="grade", type="float")
      */
     private $grade;

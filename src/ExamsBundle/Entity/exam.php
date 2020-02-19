@@ -1,7 +1,7 @@
 <?php
 
 namespace ExamsBundle\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -23,6 +23,7 @@ class exam
 
     /**
      * @var string
+     * @Assert\NotBlank
 
      * @ORM\Column(name="subject", type="string", length=255)
      */

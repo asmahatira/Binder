@@ -12,7 +12,7 @@ affichegrades:
     defaults: {_controller: ExamsBundle:Grade:reader}
 affichebackgrades:
     path:     /listbackgrades
-    defaults: {_controller: ExamsBundle:Grade:read}
+    defaults: {_controller: ExamsBundle:Default:listgrades}
 createexams:
     path:     /createexams
     defaults: {_controller: ExamsBundle:Exam:create}
