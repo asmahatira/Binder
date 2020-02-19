@@ -17,11 +17,12 @@
 
                     <tr>
 
-                        <th>Subject</th>
-                        <th>Date</th>
+                        <th>{{  knp_pagination_sortable(pagination, 'subject', 'ex.subject') }}</th>
+                        <th>{{  knp_pagination_sortable(pagination, 'date', 'ex.date')}}</th>
                         <th>Duration</th>
                     </tr>
-                    {% for exam in listexams %} <tr class="success">
+
+                    {% for exam in pagination %} <tr class="success">
                         <td>{{ exam.subject}}</td>
                         <td>{{ exam.date|date }}</td>
                         <td>{{ exam.duration}}</td>
@@ -29,8 +30,12 @@
                         <td> <a href="{{ path('deleteexams',{'id':exam.ide}) }}">Delete</a></td>
                     </tr>
                     {% endfor %}
+
                 </table>
-               </div>
+                <br/> <br/><br/><br/>
+                <div class="navigation">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
                 </div> </div> </div>
     </section>
 {% endblock %}

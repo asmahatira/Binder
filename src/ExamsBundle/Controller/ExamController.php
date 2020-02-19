@@ -10,6 +10,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ExamController extends Controller
 {
+
+
+
     public function readAction() {
         $listexams= $this->getDoctrine()->getManager()->getRepository(exam::class)->findAll();
         return ($this->render('@Exams/exam/listeforback.html.twig',array("listexams" =>$listexams)));

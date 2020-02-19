@@ -6,7 +6,7 @@ afficheexams:
     defaults: {_controller: ExamsBundle:Exam:reader}
 affichebackexams:
     path:     /listbackexams
-    defaults: {_controller: ExamsBundle:Exam:read}
+    defaults: {_controller: ExamsBundle:Default:list}
 affichegrades:
     path:     /listegrades
     defaults: {_controller: ExamsBundle:Grade:reader}
