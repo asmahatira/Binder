@@ -1,1 +1,64 @@
-{% extends 'base2.html.twig' %}
+{% extends 'base.html.twig' %}
+{% block content %}
+    <section class="home-slider owl-carousel">
+
+        <img src="{{ asset('images/bg_1.jpg') }}">
+
+        <img src="{{ asset('images/bg_3.jpg') }}">
+        <img src="{{ asset('images/bg_4.jpg') }}">
+        <img src="{{ asset('images/bg_5.jpg') }}">
+
+        <img src="{{ asset('images/bg_2.jpg') }}">
+
+    </section>
+    <section class="ftco-services ftco-no-pb">
+        <div class="container-wrap">
+            <div class="row no-gutters">
+                <div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-primary">
+                    <div class="media block-6 d-block text-center">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span class="flaticon-teacher"></span>
+                        </div>
+                        <div class="media-body p-2 mt-3">
+                            <h3 class="heading">Certified Teachers</h3>
+                            <p>We choose our teachers very carefully. We care about the quality of education your child gets.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-tertiary">
+                    <div class="media block-6 d-block text-center">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span class="flaticon-reading"></span>
+                        </div>
+                        <div class="media-body p-2 mt-3">
+                            <h3 class="heading">Special Education</h3>
+                            <p>We change the game. We teach children in ways that are both fun and interesting to keep the kids on their toes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-fifth">
+                    <div class="media block-6 d-block text-center">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span class="flaticon-books"></span>
+                        </div>
+                        <div class="media-body p-2 mt-3">
+                            <h3 class="heading">Book &amp; Library</h3>
+                            <p>We offer a wide range of books to keep the children entertained. We believe it's necessary for kids to read.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-quarternary">
+                    <div class="media block-6 d-block text-center">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span class="flaticon-diploma"></span>
+                        </div>
+                        <div class="media-body p-2 mt-3">
+                            <h3 class="heading">Certification</h3>
+                            <p>We have many certifications to prove the quality of our work and what we stand for. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

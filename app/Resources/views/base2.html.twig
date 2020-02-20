@@ -41,10 +41,10 @@
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
                     <!-- Navbar Header-->
                     <div class="blue-bg">
-                        <!-- Navbar Brand --><a href="{{path('affichebackexams')}}" class="navbar-brand d-none d-sm-inline-block">
+                        <!-- Navbar Brand --><a href="{{path('homeback')}}" class="navbar-brand d-none d-sm-inline-block">
                             <div class="brand-text d-none d-lg-inline-block"><span>BIND</span><strong>ER</strong></div>
                             <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div></a>
-                        <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+
                     </div>
                     <!-- Navbar Menu -->
                     <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
@@ -103,7 +103,7 @@
                         </ul>
                         </li>
                         <!-- Logout    -->
-                        <li class="nav-item"><a href="" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a></li>
+                        <li class="nav-item"><a href="{{ path('fos_user_security_logout') }}" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -116,24 +116,24 @@
             <div class="sidebar-header d-flex align-items-center">
                 <div class="avatar"><img src="{{ asset('imgg/image1.png') }}" alt="..." class="img-fluid rounded-circle"></div>
                 <div class="title">
-                    <h1 class="h4">Mark Stephen</h1>
-                    <p>Web Designer</p>
+                    <h1 class="h4">Logged in as {{ app.user.username }}</h1>
+                    <p>Admin</p>
                 </div>
             </div>
             <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
             <ul class="list-unstyled">
 
-                <li><a href="#classe" aria-expanded="false" data-toggle="collapse"> <i ></i>Exams </a>
+                <li><a href="#classe" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-file-text-o" aria-hidden="true"></i>Exams </a>
                     <ul id="classe" class="collapse list-unstyled ">
-                        <li><a href="{{ path('createexams') }}">Insert Exam</a></li>
-                        <li><a href="{{ path('affichebackexams') }}">List of exams</a></li>
+                        <li><a href="{{ path('createexams') }}"><i class="fa fa-pencil" aria-hidden="true"></i>Insert Exam</a></li>
+                        <li><a href="{{ path('affichebackexams') }}"><i class="fa fa-list" aria-hidden="true"></i>List of exams</a></li>
                     </ul>
                 </li>
 
-                <li><a href="#timeTable" aria-expanded="false" data-toggle="collapse"> <i ></i>Grades </a>
+                <li><a href="#timeTable" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-graduation-cap" aria-hidden="true"></i>Grades </a>
                     <ul id="timeTable" class="collapse list-unstyled ">
-                        <li><a href="{{ path('creategrades') }}">Insert grades</a></li>
-                        <li><a href="{{ path('affichebackgrades') }}">list of grades</a></li>
+                        <li><a href="{{ path('creategrades') }}"><i class="fa fa-pencil" aria-hidden="true"></i>Insert grades</a></li>
+                        <li><a href="{{ path('affichebackgrades') }}"><i class="fa fa-list" aria-hidden="true"></i>list of grades</a></li>
                     </ul>
                 </li>
 
@@ -142,10 +142,11 @@
             <!-- Page Header-->
 
             <!-- Dashboard Counts Section-->
-            <center>
+            <div style="text-align: center;">
                 {% block content %}
+<img src="{{asset ('imgg/kids.jpg') }}" alt="" class="img-fluid rounded-circle">
                 {% endblock %}
-            </center>
+            </div>
             <!-- Dashboard Header Section    -->
 
 

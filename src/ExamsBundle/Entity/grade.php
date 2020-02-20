@@ -53,31 +53,31 @@ class grade
     /**
      * @var int
      * @ORM\ManyToOne(targetEntity="exam")
-     * @ORM\JoinColumn(name="idexam", referencedColumnName="id", onDelete="CASCADE")
+     * @ORM\JoinColumn(name="examname", referencedColumnName="id", onDelete="CASCADE")
 
      */
-    private $idExam;
+    private $examname;
     /**
      * Set idExam
      *
-     * @param int $idExam
+     * @param int $examname
      *
      * @return grade
      */
-    public function setIdExam($idExam)
+    public function setExamName($examname)
     {
-        $this->idExam = $idExam;
+        $this->examname = $examname;
 
         return $this;
     }
     /**
-     * Get idExam
+     * Get examname
      *
      * @return int
      */
-    public function getidExam()
+    public function getExamName()
     {
-        return $this->idExam;
+        return $this->examname;
     }
 
     /**

@@ -1,18 +1,16 @@
 {% extends 'base2.html.twig' %}
 
 {% block content %}
-    <section>
-    <div class="row justify-content-center mb-5 pb-2 ">
-    <section id="main-content">
-    <section class="wrapper">
-    <div class="row">
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('web/images/bg_2.jpg');">
-    <div class="overlay"></div>
-    <div class="container">
-    <div class="row no-gutters slider-text align-items-center justify-content-center">
-    <div class="col-md-9 ftco-animate text-center">
 
+<div style="text-align: center;">
     <h1>List of grades</h1>
+    <div>
+        <form action="" method="get">
+            <label for="filter">Filter</label>
+            <input name="filter" type="text">
+            <button type="submit" class="btn btn-default btn-sm">Filter Now</button>
+        </form>
+    </div>
 
         <div class=table-responsive">
             <table class="table-hover table"  border="1">
@@ -26,12 +24,12 @@
                     </tr>
                     {% for grade in pagination %} <tr>
 
-                        <td>{{ grade.idExam.subject }}</td>
+                        <td>{{ grade.examname.subject }}</td>
                         <td>{{ grade.teacher.fullname}}</td>
                         <td>{{ grade.pupil.fullname}}</td>
                         <td>{{ grade.grade}}</td>
-                        <td> <a href="{{ path('updategrades',{'id':grade.idg}) }}">Update</a></td>
-                        <td> <a href="{{ path('deletegrades',{'id':grade.idg}) }}">Delete</a></td>
+                        <td> <a href="{{ path('updategrades',{'id':grade.idg}) }}" class ="btn btn-primary btn-sm">Update</a></td>
+                        <td> <a href="{{ path('deletegrades',{'id':grade.idg}) }}" class ="btn btn-warning btn-sm">Delete</a></td>
                     </tr>
 
 
@@ -40,6 +38,6 @@
                 {{ knp_pagination_render(pagination) }}
             </div></div>
         </div>
-    </section>
 
+</div>
 {% endblock %}

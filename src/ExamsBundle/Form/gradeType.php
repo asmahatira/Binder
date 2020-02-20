@@ -22,7 +22,7 @@ class gradeType extends AbstractType
             ->add('teacher', EntityType::class,array('class'=>teacher::class,'choice_label'=>'fullname','multiple'=>false))
             ->add('pupil', EntityType::class, array('class'=>pupil::class,'choice_label'=>'fullname','multiple'=>false))
             ->add('grade')
-            ->add('idExam', EntityType::class, array('class'=>exam::class, 'choice_label'=>'subject','multiple'=>false))
+            ->add('examname', EntityType::class, array('class'=>exam::class, 'choice_label'=>'subject','multiple'=>false))
             ->add('Confirm', SubmitType::class)
         ;
     }/**

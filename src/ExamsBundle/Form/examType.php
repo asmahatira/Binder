@@ -2,6 +2,7 @@
 
 namespace ExamsBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -29,7 +30,8 @@ class examType extends AbstractType
                     'Arabic' => 'arabic',
                     'French' => 'french',
                     'English' => 'english'
-                ), 'required' =>true,
+                ), 'placeholder' => 'Choose an option',
+                'required' =>true,
             ))
             ->add('date', DateType::class, array('widget'=>'single_text',))
             ->add('duration', choiceType::class, array('label'=>'Duration',
